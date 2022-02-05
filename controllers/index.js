@@ -1,28 +1,11 @@
 const router = require('express').Router();
-const dashboardRoute = require('./dashboard-routes');
-const homeRoute = require('./home-routes');
-const api = require('./api');
 
-// router.use('/', homeRoute);
-// router.use('/dashboard', dashboardRoute);
-// router.use('/api', api);
+const apiRoutes = require('./api');
+const homeRoutes = require('./home-routes.js');
+const dashboardRoutes = require('./dashboard-routes')
 
-router.get('/', (req, res) => {
-    res.render('all-posts')
-})
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
+router.use('/dashboard', dashboardRoutes);
 
-// router.use('*', )
-router.get('/adduser', (req, res) => {
-    res.render('signup')
-})
-router.post('/adduser', (req, res) => {
-    console.log(req.body);
-
-    res.redirect('/');
-});
-
-router.get('*', function (req, res) {
-    res.render('login')
-
-})
 module.exports = router;

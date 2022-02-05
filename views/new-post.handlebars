@@ -1,28 +1,17 @@
-<h2>Add new Employee</h2>
-<div class="container">
-
-
-    <form action="/addemp" method="POST">
+<h2>Add new post</h2>
+<div class="row justify-space-between-md col-10">
+    <form id="new-post-form">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Id</label>
-            <input name="id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="post-title" class="form-label">Title</label>
+            <input name="post-title" type="text" class="form-control" id="post-title" aria-describedby="post-title">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">first Name</label>
-            <input name="first_name" type="text" class="form-control" id="exampleInputPassword1">
+            <label for="post-body" class="form-label">Message</label>
+            <textarea name="post-body" type="text" class="form-control" id="post-body"
+                placeholder="Write your post here"></textarea>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Last Name</label>
-            <input name="last_name" type="text" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Email</label>
-            <input name="email" type="email" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Avatar</label>
-            <input name="avatar" type="text" class="form-control" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-outline-dark col-3">Submit</button>
     </form>
 </div>
+
+<script src="/js/new.js"></script>

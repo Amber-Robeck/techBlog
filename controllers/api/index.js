@@ -1,9 +1,10 @@
 const router = require('express').Router();
+const userRoutes = require('./user-routes');
+const commentRoute = require('./comment-routes');
+const postRoute = require('./post-routes');
 
-router.post('/adduser', (req, res) => {
-    console.log(req.body);
-
-    res.redirect('/');
-});
+router.use('/user', userRoutes);
+router.use('/comment', commentRoute);
+router.use('/post', postRoute);
 
 module.exports = router;
