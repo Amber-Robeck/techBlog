@@ -1,0 +1,42 @@
+{{!-- {{> post-info post}} --}}
+<article class="post">
+    <div class="title">
+        <h2>{{title}}</h2>
+        <h4>{{user.username}}</h4>
+        <span>{{format_date created_at}}</span>
+        <p>{{body}}</p>
+    </div>
+
+    <div class="meta">
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+</article>
+{{#if loggedIn}}
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">add comment</button>
+    </div>
+</form>
+{{/if}}
+
+<div class="comments">
+    {{#each this}}
+    <section class="comment">
+        <div class="meta">
+            {{user.username}} on {{format_date created_at}}
+        </div>
+        <div class="text">
+            {{body}}
+        </div>
+    </section>
+    {{/each}}
+</div>
+{{!-- {{> comments post.comments}} --}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
