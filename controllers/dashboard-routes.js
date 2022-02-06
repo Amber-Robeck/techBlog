@@ -89,7 +89,7 @@ router.get('/edit/:id', (req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_Id', 'user_Id',],
+                attributes: ['id', 'body', 'post_Id', 'user_Id',],
                 include: {
                     model: User,
                     attributes: ['username']
