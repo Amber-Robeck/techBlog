@@ -2,17 +2,16 @@
 <ol class="post-list">
     {{#each posts as |post|}}
     <li>
-        <article class="post">
-            <div class="title">
-                <h2>{{title}}</h2>
-                <h4>{{user.username}}</h4>
-                <p>{{body}}</p>
-            </div>
-
+        <div class="card">
+            <h2 class="card-title">{{title}}</h2>
+            <h5 class="card-title">{{body}}</h5>
+            <p class="card-text"> {{user.username}}
             <div class="meta">
                 <a href="/post/{{id}}">{{comments.length}}</a>
             </div>
-        </article>
+            </p>
+        </div>
+
     </li>
     {{/each}}
 </ol>
