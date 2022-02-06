@@ -1,0 +1,23 @@
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            <article class="post">
+                <div class="title">
+                    <h2>{{title}}</h2>
+                    <h4>{{user.username}}</h4>
+                    <p>{{body}}</p>
+                </div>
+
+                <div class="meta">
+                    <a href="/post/{{id}}">{{comments.length}}</a>
+                </div>
+            </article>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
