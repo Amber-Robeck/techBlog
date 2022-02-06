@@ -7,7 +7,6 @@ const withAuth = require('../utils/auth.js');
 
 //removed with auth for testing
 router.get('/', async (req, res) => {
-    // res.send('hello')
     try {
         res.render('all-posts-admin', { layout: 'dashboard' })
     } catch (err) {
