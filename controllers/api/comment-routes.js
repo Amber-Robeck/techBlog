@@ -5,7 +5,7 @@ const { User, Post, Comment } = require("../../models");
 //api/comment endpoint
 router.get("/", (req, res) => {
     Comment.findAll({
-        attributes: ["id", "comment_text", "user_id", "post_id"],
+        attributes: ["id", "body", "user_Id", "post_Id"],
         include: [
             {
                 model: User,
@@ -29,7 +29,7 @@ router.get("/:id", (req, res) => {
         where: {
             id: req.params.id,
         },
-        attributes: ["id", "comment_text", "user_id", "post_id"],
+        attributes: ["id", "body", "user_Id", "post_Id"],
         include: [
             {
                 model: User,
@@ -54,9 +54,9 @@ router.get("/:id", (req, res) => {
 //add comment
 router.post("/", (req, res) => {
     Comment.create({
-        comment_text: req.body.comment_text,
+        body: req.body.body,
         // user_id: req.session.user_id,
-        post_id: req.body.post_id,
+        post_Id: req.body.post_Id,
     })
         .then((dbCommentData) => {
             res.json(dbCommentData);
